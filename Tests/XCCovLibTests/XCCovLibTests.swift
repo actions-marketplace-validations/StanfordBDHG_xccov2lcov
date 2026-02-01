@@ -97,7 +97,7 @@ struct XCCovLibTests {
     
     
     @Test
-    func testTargetFullMode () {
+    func testTargetFullMode() {
         let fn1 = XCCovFunction(coveredLines: 1, executableLines: 2, lineCoverage: 3.0, executionCount: 4, lineNumber: 5, name: "fn1")
         let fn2 = XCCovFunction(coveredLines: 6, executableLines: 7, lineCoverage: 8.5, executionCount: 9, lineNumber: 10, name: "fn2")
         let file = XCCovFile(coveredLines: 1, executableLines: 2, lineCoverage: 3.5, name: "filename", path: "filepath", functions: [fn1, fn2])

@@ -16,6 +16,10 @@ inputs:
   xcresult:
     description: 'xcresult bundle'
     required: true
+  output:
+    description: 'output file'
+    required: false
+    default: 'info.lcov'
 runs:
   using: "composite"
   steps:
@@ -36,4 +40,4 @@ runs:
     - name: Run xccov2lcov
       shell: bash
       run: |
-        xcrun xccov view --report --json ${{ inputs.xcresult }} | $XCCOV2lCOV_BINARY > info.lcov
+        xcrun xccov view --report --json ${{ inputs.xcresult }} | $XCCOV2lCOV_BINARY > ${{ inputs.output }}
